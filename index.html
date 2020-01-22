@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Responsive Website!</title>
+    <script src="https://s0.2mdn.net/ads/studio/cached_libs/tweenmax_1.19.0_643d6911392a3398cb1607993edabfa7_min.js"></script>
+</head>
+
+<body>
+
+    <div class="wrapper">
+        <header>
+            <ul class="top-menu">
+                <li>Promotions</li>
+                <li>Approved Used</li>
+                <li>Vans & Pickups</li>
+                <li>Join FordPass</li>
+                <li>Search</li>
+                <li>Quick Links</li>
+            </ul>
+            <div class="main-menu">
+                <img src="images/logo-ford.jpg" alt="">
+                <ul class="left-menu">
+                    <li>Vechicles</li>
+                    <li>Shop</li>
+                    <li>Finance</li>
+                    <li>Owners</li>
+                </ul>
+                <ul class="right-menu">
+                    <li>Buy Online</li>
+                    <li>Build & Price</li>
+                    <li>Test Drive</li>
+                </ul>
+            </div>
+
+        </header>
+        <section class="banner">
+            <header>
+                <h2 class="animated"><b>You</b> want a great deal.</h2>
+                <h2 class="animated"><b>We</b> have one on all crossovers and suvs.</h2>
+                <h2 class="animated"><b>Together</b> we go further.</h2>
+                <h1>0% APR</h1>
+                <h2 class="animated-2"> representative on ford options</h2>
+                <p>Finance subject to status. Freepost Ford Credit. Exclusions apply. See below for more information.</p>
+            </header>
+        </section>
+
+        <section class="content">
+            <p>Combine our £500 August Test Drive saving with 0% APR representative on 4 year Ford Acquireˆ during August. If you take a test drive and decide to purchase a new Ford between 1ST August and 31ST August you’ll pay zero interest on 4 year Ford
+                Acquireˆ and could get £500 customer saving†.
+            </p>
+            <p>Is there a vehicle you’ve had in mind? Get the full experience when you book a test drive.
+            </p>
+            <p>View our <strong>Promotions</strong> to see our latest ones across the Ford range.
+            </p>
+            <button>Book a Test Drive</button>
+
+            <p>Retail and Small Business Customers only.</p>
+            <p>^Minimum deposit of 20% of the basic Recommended Retail Price (exc. VAT) on the invoice price. Finance subject to status. Guarantees may be required. Freepost Ford Credit. Excludes New Tourneo Courier, Tourneo Connect, Ranger XL, XLT, New
+                Ranger and non-sport Fiesta Van. </p>
+            <p>†£500 August Test Drive Customer Saving (exc. vat) off the Basic Recommended Retail Price. Excludes All-New Ranger Raptor. Not available with the Ford Scrappage Scheme.</p>
+        </section>
+
+    </div>
+
+
+</body>
+
+<script>
+    var a1 = ".animated",
+        a4 = "header h1",
+        a5 = ".animated-2",
+        a6 = "header p";
+    tl = new TimelineMax();
+
+    tl.set([".animated"], {
+        opacity: 0
+    }, 0);
+    tl.staggerTo(a1, 1.5, {
+        opacity: 1
+    }, 0.4);
+
+    tl.set([a4, a5], {
+        opacity: 0,
+        x: 0,
+        y: -50,
+    }, 0);
+
+    tl.to([a4], 0.5, {
+        opacity: 1,
+        // ease: Bounce.easeOut,
+        ease: Power2.easeOut,
+        yoyo: true,
+        y: 0,
+        x: 0
+    }, 1.2);
+    tl.to([a5], 0.5, {
+        opacity: 1,
+        // ease: Bounce.easeOut,
+        ease: Power2.easeOut,
+        y: 0,
+        x: 0
+    }, 1.4);
+
+    tl.set(a6, {
+        x: -100,
+        opacity: 0
+    }, 0);
+    tl.to(a6, 1.5, {
+        x: 0,
+        opacity: 1
+    }, 1.8);
+</script>
+
+</html>
