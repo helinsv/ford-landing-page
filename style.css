@@ -110,6 +110,11 @@ header {
     color: #4f95c8;
 }
 
+[aria-controls="left-menu"],
+[aria-controls="right-menu"] {
+    display: none;
+}
+
 .main-menu img {
     width: 80px;
     grid-area: logo;
@@ -219,17 +224,8 @@ strong {
         border-right: 0px;
     }
     .main-menu {
-        grid-template-areas: "logo left-menu left-menu" "right-menu right-menu right-menu";
+        grid-template-areas: "logo logo hide-menu-btn" "left-menu left-menu left-menu" "right-menu right-menu right-menu";
         grid-gap: 0;
-    }
-    .left-menu {
-        justify-content: right;
-        padding-left: 0px;
-    }
-    .right-menu {
-        justify-content: center;
-        padding: 0;
-        margin: 0;
     }
     .content {
         padding: 30px 30px;
@@ -237,28 +233,61 @@ strong {
     .banner {
         grid-template-columns: 2fr 1fr;
     }
+    /* 
+    ----
+    Toggle Menu
+    ----
+     */
+    .hide-menu-btn {
+        justify-self: end;
+        grid-area: hide-menu-btn;
+        padding: 10px 15px;
+    }
+    .left-menu,
+    .right-menu {
+        justify-content: center;
+        margin: 0;
+        padding: 10px 0 0 0;
+        justify-self: center;
+    }
+    header {
+        order: -1;
+        perspective: 800px;
+    }
+    [aria-controls="left-menu"],
+    [aria-controls="right-menu"] {
+        display: block;
+        margin-bottom: 10px;
+    }
+    header .left-menu,
+    header .right-menu {
+        max-height: 0;
+        overflow: hidden;
+        transform: rotateX(90deg);
+        transition: all 0.5s;
+    }
+    [aria-expanded="true"]~.left-menu,
+    [aria-expanded="true"]~.right-menu {
+        display: grid;
+        max-height: 500px;
+        transform: rotateX(0);
+    }
+    [aria-expanded="false"] .close {
+        display: none;
+    }
+    [aria-expanded="true"] .close {
+        display: inline-block;
+    }
+    [aria-expanded="true"] .open {
+        display: none;
+    }
 }
 
 @media (max-width: 570px) {
     body {
         margin: 0;
     }
-    .main-menu {
-        justify-items: center;
-        grid-template-areas: "logo logo logo" "left-menu left-menu left-menu" "right-menu right-menu right-menu";
-    }
     .main-menu img {
-        justify-self: center;
-    }
-    .left-menu {
-        padding-top: 20px;
-        margin: 0;
-        justify-self: center;
-    }
-    .right-menu {
-        padding: 0;
-        padding-top: 10px;
-        margin: 0;
         justify-self: center;
     }
     .content {

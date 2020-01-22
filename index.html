@@ -13,6 +13,7 @@
 
     <div class="wrapper">
         <header>
+
             <ul class="top-menu">
                 <li>Promotions</li>
                 <li>Approved Used</li>
@@ -21,8 +22,13 @@
                 <li>Search</li>
                 <li>Quick Links</li>
             </ul>
+
             <div class="main-menu">
                 <img src="images/logo-ford.jpg" alt="">
+                <button aria-expanded="false" aria-controls="left-menu" class="hide-menu-btn">
+                        <span class="open">☰</span>
+                        <span class="close">×</span>
+                </button>
                 <ul class="left-menu">
                     <li>Vechicles</li>
                     <li>Shop</li>
@@ -35,7 +41,6 @@
                     <li>Test Drive</li>
                 </ul>
             </div>
-
         </header>
         <section class="banner">
             <header>
@@ -113,6 +118,17 @@
         x: 0,
         opacity: 1
     }, 1.8);
+
+    const navButton = document.querySelector('button[aria-expanded]');
+
+    function toggleNav({
+        target
+    }) {
+        const expanded = target.getAttribute('aria-expanded') === 'true' || false;
+        navButton.setAttribute('aria-expanded', !expanded);
+    }
+
+    navButton.addEventListener('click', toggleNav);
 </script>
 
 </html>
