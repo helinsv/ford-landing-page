@@ -4,9 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="style.css">
     <title>Responsive Website!</title>
+    <script type="text/javascript" src="script.js"></script>
     <script src="https://s0.2mdn.net/ads/studio/cached_libs/tweenmax_1.19.0_643d6911392a3398cb1607993edabfa7_min.js"></script>
+    <script>
+        var clickTag = "https://www.google.com";
+    </script>
 </head>
 
 <body>
@@ -42,6 +46,9 @@
                 </ul>
             </div>
         </header>
+
+
+
         <section class="banner">
             <header>
                 <h2 class="animated"><b>You</b> want a great deal.</h2>
@@ -51,6 +58,18 @@
                 <h2 class="animated-2"> representative on ford options</h2>
                 <p>Finance subject to status. Freepost Ford Credit. Exclusions apply. See below for more information.</p>
             </header>
+        </section>
+
+        <section class="content">
+            <div id="content">
+                <div id="main"> </div>
+                <div id="chevron"> </div>
+                <div id="border"></div>
+                <a href="javascript: void(0);" onclick="javascript: clicktag_Click();">
+                    <div id="clicktag" onmouseenter="mouseEnter()" onmouseleave="mouseLeave()"></div>
+                </a>
+                <div id="terms_btn" onclick="termsEnter()" onmouseenter="termsEnter()" onmouseleave="termsLeave()"></div>
+            </div>
         </section>
 
         <section class="content">
@@ -75,6 +94,19 @@
 </body>
 
 <script>
+    const navButton = document.querySelector('button[aria-expanded]');
+
+    function toggleNav({
+        target
+    }) {
+        const expanded = target.getAttribute('aria-expanded') === 'true' || false;
+        navButton.setAttribute('aria-expanded', !expanded);
+    }
+
+    navButton.addEventListener('click', toggleNav);
+</script>
+
+<!-- <script>
     var a1 = ".animated",
         a4 = "header h1",
         a5 = ".animated-2",
@@ -129,6 +161,6 @@
     }
 
     navButton.addEventListener('click', toggleNav);
-</script>
+</script> -->
 
 </html>
